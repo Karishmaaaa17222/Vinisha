@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Vinisha🌸</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #ffd6e8, #fff5f9, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #ff2e7e;
+      text-shadow: 0 0 10px rgba(255, 105, 180, 0.6), 0 0 20px rgba(255, 182, 193, 0.4);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 10px #ff6fa3, 0 0 20px #ffb6c1; }
+      50% { text-shadow: 0 0 20px #ff2e7e, 0 0 40px #ff8fa3; }
+    }
+    .message {
+      background: rgba(255,255,255,0.9);
+      border-radius: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      padding: 20px 35px;
+      margin: 15px;
+      font-size: 1.2em;
+      color: #b0235f;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1.3s ease forwards;
+    }
+    .message:nth-child(2) { animation-delay: 1s; }
+    .message:nth-child(3) { animation-delay: 2s; }
+    .message:nth-child(4) { animation-delay: 3s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating flowers */
+    .flower, .heart {
+      position: absolute;
+      opacity: 0.8;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.6) rotate(0deg); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+
+    /* Surprise button */
+    .reveal-btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #ff4d94, #ff8fa3);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 4s;
+      opacity: 0;
+    }
+    .reveal-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    .hidden-message {
+      margin-top: 20px;
+      font-size: 1.4em;
+      color: #ff2e7e;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .hidden-message.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>For Karishma 🌸</h1>
+
+  <div class="message">Every flower reminds me of you.</div>
+  <div class="message">Pink for warmth, white for purity—just like your smile.</div>
+  <div class="message">This little garden is only for you.</div>
+
+  <button class="reveal-btn" onclick="revealMessage()">One more thing...</button>
+  <div class="hidden-message" id="hiddenMessage">You make the world more beautiful just by being in it 💖</div>
+
+  <script>
+    // Floating flowers 🌸
+    for (let i = 0; i < 25; i++) {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      flower.textContent = "🌸";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.fontSize = 18 + Math.random() * 25 + "px";
+      flower.style.animationDuration = 10 + Math.random() * 12 + "s";
+      flower.style.animationDelay = Math.random() * 10 + "s";
+      document.body.appendChild(flower);
+    }
+
+    // Floating hearts ❤️
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = 14 + Math.random() * 18 + "px";
+      heart.style.animationDuration = 12 + Math.random() * 15 + "s";
+      heart.style.animationDelay = Math.random() * 10 + "s";
+      document.body.appendChild(heart);
+    }
+
+    // Reveal hidden message
+    function revealMessage() {
+      document.getElementById("hiddenMessage").classList.add("show");
+    }
+  </script>
+</body>
+</html>
